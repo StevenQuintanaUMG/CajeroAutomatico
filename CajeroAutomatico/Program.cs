@@ -96,7 +96,9 @@ static string HideCharacter()
     do
     {
         key = Console.ReadKey(true);
-        if (char.IsNumber(key.KeyChar) || (char.IsLetter(key.KeyChar)))
+        //Agregue tambien para que aceptara simbolos ya que tambien los abarca el alfanumerico
+        //Solo que eso ya no lo explique en el video porque me percate despues
+        if ((char.IsNumber(key.KeyChar)) || (char.IsLetter(key.KeyChar)) || (char.IsSymbol(key.KeyChar)))
         {
             Console.Write("*");
         }
@@ -120,7 +122,7 @@ static void contrasena()
         CLAVE = HideCharacter().Replace("\r", "");
         Console.WriteLine();
 
-        if ((CLAVE.ToUpper().Equals("B124")))
+        if ((CLAVE.Equals("$Clave567")))
         {
             TienePermiso = 1;
         }
